@@ -1,4 +1,4 @@
-const user = require("../models/userSchema.js");
+const user = require("../models/user.schema.js");
 
 const home=async(req,res)=>{
     res.send(await user.find(req.body))

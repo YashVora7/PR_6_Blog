@@ -1,6 +1,6 @@
 const express = require('express')
 const connect = require('./config/db.js');
-const user = require('./routes/userroute.js');
+const user = require('./routes/user.route.js');
 require('dotenv').config();
 const app = express()
 const cors = require('cors');
@@ -11,7 +11,7 @@ app.use(express.static(__dirname+'/public'));
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
-let port = process.env.Port
+let port = process.env.port
 app.use(cors());
 
 app.use("/user",user)
