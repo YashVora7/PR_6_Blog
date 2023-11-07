@@ -1,23 +1,15 @@
-// const mongoose= require('mongoose');
+const moongose = require("mongoose")
 
-// const userSchema=mongoose.Schema({
-//     name:String,
-//     password:String
-// })
-
-// let user=mongoose.model('MVC',userSchema);
-
-// module.exports=user;
-
-const mongoose = require('mongoose');
-
-const userSchema = new mongoose.Schema(
-    {
-        name:String,
-        password:String
+const userschema = new moongose.Schema({
+    username : String,
+    password : String,
+    email : String,
+    role: {
+      type: String,
+      enum: ["user", "admin"],
+      default: "user", 
     }
-)
+})
 
-const user = mongoose.model("user",userSchema)
-
+const user = moongose.model("userdata" , userschema)
 module.exports = user
